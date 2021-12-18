@@ -40,7 +40,7 @@ function setup() {
 }
 
 function draw() {
-  background(255, 1);
+  background(255, 0.5);
   // angle = angleSlider.value();
   // delta = deltaSlider.value();
   //console.log(angle, delta);
