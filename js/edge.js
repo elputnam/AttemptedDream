@@ -50,7 +50,7 @@ function Edge(a, b) {
     // Law of sines right here!
     var alpha = interior * 0.5;
     var beta = PI - radians(angle) - alpha;
-    var hlen = (elen * sin(alpha)) / sin(beta);
+    var hlen = (elen * cos(alpha)) / cos(beta);
 
     v1.setMag(hlen);
     v2.setMag(hlen);

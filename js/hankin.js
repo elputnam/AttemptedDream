@@ -14,8 +14,9 @@ function Hankin(a, v) {
   this.b = p5.Vector.add(a, v);
 
   this.show = function() {
-    strokeWeight(random(3,10));
-    stroke(random(100, 200), random(100), random(100));
+    strokeWeight(7);
+    strokeCap(PROJECT);
+    stroke(random(175, 360), 100, random(100));
     line(this.a.x, this.a.y, this.b.x, this.b.y);
   };
 }

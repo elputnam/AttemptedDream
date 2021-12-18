@@ -16,9 +16,13 @@ var delta = 10;
 var deltaSlider;
 var angleSlider;
 
+var capturer = new CCapture({
+  format:'webm', 
+  framerate: 60
+});
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1920, 1080);
   //angleMode(DEGREES);
   colorMode(HSB, 360, 100, 100, 100);
   background(255);
@@ -40,7 +44,8 @@ function setup() {
 }
 
 function draw() {
-  background(255, 0.5);
+  background(255);
+  if (frameCount==1) capturer.start(); // start the animation capture
   // angle = angleSlider.value();
   // delta = deltaSlider.value();
   //console.log(angle, delta);
@@ -59,4 +64,13 @@ function draw() {
   if (delta >= 25){
     delta = 0;
   }
+
+  capturer.capture(document.getElementById('defaultCanvas0')); 
+  if (frameCount==1200){
+    save_record();
+  }
+}
+
+function save_record() {
+  capturer.save();
 }
